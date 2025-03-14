@@ -1,0 +1,14 @@
+from tradingview_ta import TA_Handler, Interval
+
+symbol = "AAPL"
+exchange = "NASDAQ"
+screener = "america"
+
+analysis = TA_Handler(
+    symbol=symbol,
+    screener=screener,
+    exchange=exchange,
+    interval=Interval.INTERVAL_1_DAY
+)
+
+print("Cena:", analysis.indicators[OPEN])

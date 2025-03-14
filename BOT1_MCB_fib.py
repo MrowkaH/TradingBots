@@ -1,7 +1,7 @@
 import ccxt
 import time
 
-exchange = ccxt.binance({
+exchange = ccxt.mexc({
     'apiKey': 'YOUR_API_KEY',
     'secret': 'YOUR_SECRET_KEY',
 })
