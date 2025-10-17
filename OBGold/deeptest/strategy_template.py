@@ -39,7 +39,6 @@ def ma_cross(df: pd.DataFrame, params: Dict[str, Any]) -> pd.Series:
     sell = spread < -(nz_bps / 1e4)
     pos = pos.mask(buy, 1.0)
     pos = pos.mask(sell, -1.0)
-    # Hold last non-zero signal when within neutral zone
     pos = pos.replace(0, pd.NA)
     pos = pos.astype("Float64").ffill().fillna(0.0).astype(float)
     return pos.clip(-1, 1)
